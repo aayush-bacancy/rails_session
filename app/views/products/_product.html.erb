@@ -1,6 +1,8 @@
 <div id="<%= dom_id product %>">
   <tr>
     <td><%= product.name %></td>
+    <td><%= link_to "Show", product_path(product) %></td>
+    <td><%= link_to "Edit", edit_product_path(product) %></td>
     <td>
       <div class="d-flex align-items-center justify-content-between" style="width: 120px;">
         <%= button_to "-", remove_from_cart_path(product.id), class: "btn btn-danger" %>

@@ -15,13 +15,13 @@ class ProductsController < ApplicationController
       session[:cart][params[:id]] -= 1
     end
     p session[:cart]
-    redirect_to root_path
+    redirect_back(fallback_location: root_path)
   end
 
   def add_to_cart
     session[:cart][params[:id]] ||= 0
     session[:cart][params[:id]] += 1
-    redirect_to root_path
+    redirect_back(fallback_location: root_path)
   end
 
   # GET /products/1 or /products/1.json

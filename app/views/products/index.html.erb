@@ -1,0 +1,19 @@
+<p style="color: green"><%= notice %></p>
+<h1>Products</h1>
+<%= debug session[:cart]%>
+<div id="products">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Quantity</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @products.each do |product| %>
+        <%= render product %>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+<%= link_to "New product", new_product_path %>
